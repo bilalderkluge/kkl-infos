@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klasse 8A – Schülerprofil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#070b14;
+      --bg2:#0b1220;
+      --card:rgba(17, 28, 51, 0.75);
+      --stroke:rgba(255,255,255,0.08);
+      --text:#eaf0ff;
+      --muted:#9aa7bd;
+      --blue:#3b82f6;
+      --green:#22c55e;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+
+    body{
+      background: radial-gradient(circle at top, var(--bg2), var(--bg1));
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    html{scroll-behavior:smooth;}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:0.8s ease;
+    }
+
+    .reveal.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 25px;
+      backdrop-filter: blur(14px);
+      background: rgba(10,15,30,0.65);
+      border-bottom:1px solid var(--stroke);
+    }
+
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue);}
+
+    .logo svg{width:34px;height:34px;}
+
+    nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:0.9rem;}
+    nav a:hover{color:var(--blue);}
+
+    header{text-align:center;padding:90px 20px 30px;}
+    header h1{font-size:3.2rem;color:var(--blue);font-weight:800;}
+    header p{color:var(--muted);margin-top:10px;}
+
+    .about{max-width:800px;margin:0 auto 40px;text-align:center;color:var(--muted);line-height:1.6;}
+
+    .container{max-width:1100px;margin:0 auto;padding:0 20px 60px;}
+
+    .section-title{margin:40px 0 16px;font-size:1.25rem;font-weight:700;color:var(--green);}
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+    .gallery img{width:100%;height:170px;object-fit:cover;border-radius:14px;border:1px solid var(--stroke);}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+
+    .card{
+      display:flex;gap:14px;padding:16px;border-radius:16px;
+      background:var(--card);border:1px solid var(--stroke);
+      transition:0.3s;
+    }
+
+    .card:hover{transform:translateY(-6px);border-color:var(--blue);}
+
+    .avatar{width:46px;height:46px;border-radius:14px;
+      background:linear-gradient(135deg,var(--blue),var(--green));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:white;}
+
+    .name{font-weight:800;color:var(--green);}
+    .info{color:var(--muted);font-size:0.9rem;line-height:1.4;}
+
+    footer{text-align:center;padding:40px;color:var(--muted);border-top:1px solid var(--stroke);}
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M4 7L12 3L20 7L12 11L4 7Z" stroke="#3b82f6" stroke-width="2"/>
+      <path d="M4 12L12 16L20 12" stroke="#22c55e" stroke-width="2"/>
+    </svg>
+    <span>Klasse 8A</span>
+  </div>
+  <div>
+    <a href="#home">Start</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#team">Team</a>
+    <a href="#klasse">Schüler</a>
+  </div>
+</nav>
+
+<header id="home" class="reveal show">
+  <h1>Klasse 8A</h1>
+  <p>Moderne Schulklasse – Schüler, Lehrer & Gemeinschaft</p>
+</header>
+
+<div class="about reveal show">
+  <p>Willkommen auf der offiziellen Seite der Klasse 8A. Hier stellen sich alle Mitglieder der Klasse vor und erzählen etwas über sich.</p>
+</div>
+
+<div class="container">
+
+  <div class="section-title reveal show">Klassenfotos</div>
+  <section class="gallery reveal show">
+    <img src="https://picsum.photos/600/400?1" />
+    <img src="https://picsum.photos/600/400?2" />
+    <img src="https://picsum.photos/600/400?3" />
+    <img src="https://picsum.photos/600/400?4" />
+    <img src="https://picsum.photos/600/400?5" />
+  </section>
+
+  <div class="section-title reveal show" id="team">Lehrer & Helfer</div>
+  <section class="cards">
+    <div class="card reveal show"><div class="avatar">H</div><div><div class="name">Herr Müller</div><div class="info">Ich bin Klassenlehrer und unterrichte Mathe und Physik. Mir ist wichtig, dass jeder mitkommt und sich wohlfühlt.</div></div></div>
+    <div class="card reveal show"><div class="avatar">S</div><div><div class="name">Frau Schmidt</div><div class="info">Ich helfe als Schulhelferin bei Problemen und unterstütze die Klasse im Alltag und bei Organisation.</div></div></div>
+  </section>
+
+  <div class="section-title reveal show" id="klasse">Schülerübersicht</div>
+  <section class="cards">
+
+    <div class="card reveal show"><div class="avatar">M</div><div><div class="name">Max Müller</div><div class="info">Ich spiele gerne Fußball und zocke in meiner Freizeit. Mathe ist mein Lieblingsfach.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">L</div><div><div class="name">Lena Schmidt</div><div class="info">Ich zeichne sehr gerne und höre viel Musik. Kunst ist mein Lieblingsfach.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">A</div><div><div class="name">Anna Weber</div><div class="info">Ich lese gerne Bücher und reite in meiner Freizeit. Deutsch mag ich besonders.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">E</div><div><div class="name">Emil Fischer</div><div class="info">Ich spiele Basketball und liebe Gaming. Mathe finde ich spannend.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">S</div><div><div class="name">Sofia Becker</div><div class="info">Ich tanze gern und höre viel Musik. Englisch macht mir Spaß.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">J</div><div><div class="name">Jonas Wagner</div><div class="info">Ich interessiere mich für Technik und Fußball. Physik finde ich cool.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">M</div><div><div class="name">Mia Hoffmann</div><div class="info">Ich treffe gerne Freunde und zeichne viel. Kunst ist mein Ding.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">L</div><div><div class="name">Leon Richter</div><div class="info">Ich mache gerne Sport und spiele Videospiele. Sport ist mein Lieblingsfach.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">H</div><div><div class="name">Hannah Klein</div><div class="info">Ich lese gerne und höre Musik. Deutsch gefällt mir sehr.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">D</div><div><div class="name">David Neumann</div><div class="info">Ich interessiere mich für Computer und Programmieren. Informatik ist spannend.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">N</div><div><div class="name">Nina Schulz</div><div class="info">Ich male gerne und bin kreativ. Kunst macht mir Spaß.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">T</div><div><div class="name">Tom Krüger</div><div class="info">Ich spiele Fußball und treffe Freunde. Sport ist mein Lieblingsfach.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">J</div><div><div class="name">Julia Meyer</div><div class="info">Ich höre Musik und lese gerne. Englisch finde ich interessant.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">F</div><div><div class="name">Felix Bauer</div><div class="info">Ich interessiere mich für Technik und Games. Mathe ist okay für mich.</div></div></div>
+
+    <div class="card reveal show"><div class="avatar">P</div><div><div class="name">Paul Schneider</div><div class="info">Ich mache gerne Sport und bin viel draußen. Geschichte finde ich spannend.</div></div></div>
+
+  </section>
+
+</div>
+
+<footer class="reveal show">
+© 2026 Klasse 8A
+</footer>
+
+</body>
+</html>
